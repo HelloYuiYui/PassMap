@@ -118,7 +118,8 @@ function addLog(c){
 }
 
 app.get('/', function(req, res){
-    res.sendFile(__dirname + '/maps.html');
+    res.send("hello");
+    //res.sendFile(__dirname + '/maps.html');
 })
 
 app.get('/codes', function(req, res){
