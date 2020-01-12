@@ -18,6 +18,7 @@ function getB(c){
     x.onreadystatechange=function(){
         if (x.readyState==4 && x.status==200){
             var passdata = JSON.parse(x.responseText);
+            console.log('it comes here, getB');
             paintMap(c, passdata);
         }
     }
@@ -31,6 +32,7 @@ function countryCodes(){
     var x = new XMLHttpRequest();
     x.onreadystatechange=function(){
         if (x.readyState==4){ // && x.status==304){
+            console.log('it comes here, countryCodes');
             cc = JSON.parse(x.responseText);
         }
     }
