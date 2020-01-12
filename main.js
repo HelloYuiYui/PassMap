@@ -19,7 +19,7 @@ var vals = {
 // Converts country code to country name. i.e. TR = Turkey
 function codeToName(){
     var obj = {};
-    var data = fs.readFileSync('countrycodes.txt', 'utf8').split('\r\n');
+    var data = fs.readFileSync('/countrycodes.txt', 'utf8').split('\r\n');
     for (i=0;i<data.length;i++){
         var current = data[i].split(',');
         obj[current[1]] = current[0];
@@ -30,7 +30,7 @@ function codeToName(){
 // Converts country name to country code. i.e. Bulgaria = BG
 function nameToCode(){
     var obj = {};
-    var data = fs.readFileSync('countrycodes.txt', 'utf8').split('\r\n');
+    var data = fs.readFileSync('/countrycodes.txt', 'utf8').split('\r\n');
     for (i=0;i<data.length;i++){
         var current = data[i].split(',');
         obj[current[0]] = current[1];
@@ -39,7 +39,7 @@ function nameToCode(){
 }
 
 function data(){
-    var data = fs.readFileSync('passport-index-tidy.csv', 'utf8').split('\r\n');
+    var data = fs.readFileSync('/passport-index-tidy.csv', 'utf8').split('\r\n');
     return data;
 }
 
@@ -130,8 +130,8 @@ app.get('/country/:c', function(req, res){
     var ccodes = codeToName();
     var pass = ccodes[req.params.c.toUpperCase()];
     console.log(pass);
-    var d = new Date
-    addLog("[" + d.getDay() + " " + monthNames[d.getMonth()] + " " + d.getFullYear() + ", " + d.getHours() + ":" + d.getMinutes() + ", "+d.getSeconds()+"] "+pass+"\r\n")
+    //var d = new Date
+    //addLog("[" + d.getDay() + " " + monthNames[d.getMonth()] + " " + d.getFullYear() + ", " + d.getHours() + ":" + d.getMinutes() + ", "+d.getSeconds()+"] "+pass+"\r\n")
     res.send(JSON.stringify(getPass(pass)));
 })
 
