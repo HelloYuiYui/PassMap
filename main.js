@@ -5,7 +5,7 @@ var http = require("http");//Server(app);
 var bodyParser = require("body-parser");
 
 app.use(bodyParser.json());
-app.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname + '/'))
 
 var port = 80;
 var vals = {
