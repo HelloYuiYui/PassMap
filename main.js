@@ -77,9 +77,9 @@ function getPass(country){
     var iEnd = (index + 1) * 199;
     for(i=iStart;i<iEnd;i++){
         //console.log(iStart);
-        var pass = contents[i].split(',')[0],
-            des = contents[i].split(',')[1],
-            val = contents[i].split(',')[2];
+        var pass = contents[i].value.split(',')[0],
+            des = contents[i].value.split(',')[1],
+            val = contents[i].value.split(',')[2];
         //console.log(contents[i].split(',')[1]);
         //objd[val]=[];
         objd[vals[val]].push(des);
