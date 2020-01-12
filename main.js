@@ -19,7 +19,7 @@ var vals = {
 // Converts country code to country name. i.e. TR = Turkey
 function codeToName(){
     var obj = {};
-    var data = fs.readFileSync('countrycodes.txt', 'utf8').split('\r\n');
+    var data = fs.readFileSync('/countrycodes.txt', 'utf8').split('\r\n');
     for (i=0;i<data.length;i++){
         var current = data[i].split(',');
         obj[current[1]] = current[0];
@@ -39,7 +39,7 @@ function nameToCode(){
 }
 
 function data(){
-    var data = fs.readFileSync('passport-index-dataset/passport-index-tidy.csv', 'utf8').split('\r\n');
+    var data = fs.readFileSync('/passport-index-dataset/passport-index-tidy.csv', 'utf8').split('\r\n');
     return data;
 }
 
