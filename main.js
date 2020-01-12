@@ -139,10 +139,9 @@ app.get('/country/:c', function(req, res){
 app.set('port', process.env.PORT || 80);
 app.set('host', process.env.HOST || '0.0.0.0');
 
-http.createServer(app).listen(app.get('port'), app.get('host'), function(){
-  console.log("Express server listening on port " + app.get('port'));
-});
-
+app.listen(app.get('port'), function() {
+  console.log("Node app is running at localhost:" + app.get('port'))
+})
 
 // Server and port settings.
 //http.listen(port, '192.168.1.1', function(){
