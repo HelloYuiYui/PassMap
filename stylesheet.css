@@ -1,16 +1,3 @@
-/*
- * Below are Cascading Style Sheet (CSS) definitions in use in this file,
- * which allow easily changing how countries are displayed.
- *
- * The styles are applied in the order in which they are defined (and re-defined) here in the preamble.
- */
-
-/*
- * Circles around small countries and territories
- *
- * Change opacity to 1 to display all circles
- */
-
 body {
     width: 75%;
     margin: 0 auto 0 auto;
@@ -188,6 +175,19 @@ header h1 {
  *
  * .eu - for members of European Union
  * .eaeu - for members of Eurasian Economic Union
+ */
+
+/*
+ * Below are Cascading Style Sheet (CSS) definitions in use in this file,
+ * which allow easily changing how countries are displayed.
+ *
+ * The styles are applied in the order in which they are defined (and re-defined) here in the preamble.
+ */
+
+/*
+ * Circles around small countries and territories
+ *
+ * Change opacity to 1 to display all circles
  */
 
 
