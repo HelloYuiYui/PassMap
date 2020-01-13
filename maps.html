@@ -34,6 +34,7 @@ function countryCodes(){
         if (x.readyState==4){ // && x.status==304){
             console.log('it comes here, countryCodes');
             cc = JSON.parse(x.responseText);
+            console.log(cc);
         }
     }
     x.open('GET', '/codes', true);
