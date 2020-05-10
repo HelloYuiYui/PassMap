@@ -30,7 +30,7 @@ function codeToName(){
 // Converts country name to country code. i.e. Bulgaria = BG
 function nameToCode(){
     var obj = {};
-    var data = fs.readFileSync('countrycodes.txt', 'utf8').split('/\r?\n/');
+    var data = fs.readFileSync('countrycodes_linear.txt', 'utf8').split(';');
     for (i=0;i<data.length;i++){
         var current = data[i].split(',');
         obj[current[0]] = current[1];
