@@ -4,115 +4,8 @@
         <title>Passport Map</title>
         <script data-ad-client="ca-pub-5158551711256680" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <script src="script.js"></script>
-        <!--<script>
-var cc = '';//countryCodes();
-countryCodes();
-
-function paint(c, color){
-	var f = document.getElementsByClassName(c);
-	for (i=0;i<f.length;i++){
-    	f[i].style.fill = color;
-	}
-}
-
-function getB(c){
-    var x = new XMLHttpRequest();
-    x.onreadystatechange=function(){
-        if (x.readyState==4 && x.status==200){
-            var passdata = JSON.parse(x.responseText);
-            console.log('it comes here, getB');
-            paintMap(c, passdata);
-        }
-    }
-    x.open('GET', '/country/' + c, true);
-    x.setRequestHeader('Content-Type', 'application/json');
-    x.send();
-}
-    
-function countryCodes(){
-    var ret = '';
-    var x = new XMLHttpRequest();
-    x.onreadystatechange=function(){
-        if (x.readyState==4){ // && x.status==304){
-            console.log('it comes here, countryCodes');
-            cc = JSON.parse(x.responseText);
-            console.log(cc);
-        }
-    }
-    x.open('GET', '/codes', true);
-    x.setRequestHeader('Content-Type', 'application/json');
-    x.send();
-    
-}
-
-function paintMap(c, ree){
-    //paint(cc[ree['self']].toLowerCase(), 'orange');
-    var vf = ree['visafree'];
-    
-    vf.forEach(function(i){
-        if (cc[i] == undefined){
-            return 0;
-            //console.log('an error occured');
-        } else {
-            //console.log(cc[i].toLowerCase());
-            paint(cc[i].toLowerCase(), 'green');
-        }
-    })
-    
-    veta = ree['visaeta']
-    veta.forEach(function(i){
-        if (cc[i] == undefined){
-            return 0;
-            //console.log('an error occured');
-        } else {
-            //console.log(cc[i].toLowerCase());
-            paint(cc[i].toLowerCase(), 'beffb3');
-        }
-    })
-        
-    von = ree['visaonarrival']
-    von.forEach(function(i){
-        if (cc[i] == undefined){
-            return 0;
-            //console.log('an error occured');
-        } else {
-            //console.log(cc[i].toLowerCase());
-            paint(cc[i].toLowerCase(), '8ed498');    // 8ed498
-        }
-    })
-    
-    // comment here to get a combined result.
-    vr = ree['visarequired']
-    vr.forEach(function(i){
-        if (cc[i] == undefined){
-            return 0;
-            //console.log('an error occured');
-        } else {
-            //console.log(cc[i].toLowerCase());
-            paint(cc[i].toLowerCase(), 'c0c0c0');    // 8ed498
-        }
-    })
-    
-    if (document.getElementById(c).className['animVal'].indexOf(' eu') > 0){ paint('eu', '003399'); }
-    
-    paint(cc[ree['self']].toLowerCase(), 'orange');
-    
-    
-}
-
-document.addEventListener('click', function(e) {
-    e = e || window.event;
-    var target = e.target || e.srcElement,
-        text = target.textContent || target.innerText;
-    if (target.parentNode.tagName == 'svg'){
-        getB(target.id)
-    } else {
-        getB(target.parentNode.id);
-    }
-    
-}, false);
-        </script>-->
-<style>
+        <meta http-equiv="Content-Security-Policy" content="font-src 'self' data:; img-src 'self' data:; default-src 'self' http://121.0.0:80/">
+        <style>
 body {
     width: 75%;
     margin: 0 auto 0 auto;
@@ -242,8 +135,7 @@ header h1 {
     padding: 5px;
     background-color: black;
 }        
-</style>
-        
+</style>    
         <link rel="stylesheet" href="stylesheet.css" type="text/css">
 
 <!-- other head elements from your page -->
