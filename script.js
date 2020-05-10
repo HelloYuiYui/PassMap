@@ -13,6 +13,7 @@ function getB(c){
     x.onreadystatechange=function(){
         if (x.readyState==4 && x.status==200){
             var passdata = JSON.parse(x.responseText);
+            console.log(passdata);
             paintMap(c, passdata);
         }
     }
@@ -36,50 +37,49 @@ function countryCodes(){
 }
 
 function paintMap(c, ree){
-    //paint(cc[ree['self']].toLowerCase(), 'orange');
-    var vf = ree['visafree'];
     
+    var vf = ree['visafree'];
     vf.forEach(function(i){
         if (cc[i] == undefined){
-            return 0;
-            console.log('an error occured');
+            console.log('an error occured = ' + i);
+            //return 0;
         } else {
             paint(cc[i].toLowerCase(), 'green');
         }
     })
     
-    veta = ree['visaeta']
+    veta = ree['visaeta'];
     veta.forEach(function(i){
         if (cc[i] == undefined){
-            return 0;
-            console.log('an error occured');
+            console.log('an error occured = ' + i);
+            //return 0;
         } else {
-            paint(cc[i].toLowerCase(), 'beffb3');
+            paint(cc[i].toLowerCase(), '#beffb3');
         }
     })
         
-    von = ree['visaonarrival']
+    von = ree['visaonarrival'];
     von.forEach(function(i){
         if (cc[i] == undefined){
-            return 0;
-            console.log('an error occured');
+            console.log('an error occured = ' + i);
+            //return 0;
         } else {
-            paint(cc[i].toLowerCase(), '8ed498');    // 8ed498
+            paint(cc[i].toLowerCase(), '#8ed498');    // 8ed498
         }
     })
     
     // comment here to get a combined result.
-    vr = ree['visarequired']
+    vr = ree['visarequired'];
     vr.forEach(function(i){
         if (cc[i] == undefined){
-            return 0;
-            console.log('an error occured');
+            console.log('an error occured = ' + i);
+            //return 0;
         } else {
-            paint(cc[i].toLowerCase(), 'c0c0c0');    // 8ed498
+            paint(cc[i].toLowerCase(), '#c0c0c0');    // 8ed498
         }
     })
     
-    if (document.getElementById(c).className['animVal'].indexOf(' eu') > 0){ paint('eu', '003399'); }
+    if (document.getElementById(c).className['animVal'].indexOf(' eu') > 0){ paint('eu', '#003399'); }
     
     paint(cc[ree['self']].toLowerCase(), 'orange');
     
