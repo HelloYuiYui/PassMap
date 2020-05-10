@@ -42,9 +42,8 @@ function paintMap(c, ree){
     vf.forEach(function(i){
         if (cc[i] == undefined){
             return 0;
-            //console.log('an error occured');
+            console.log('an error occured');
         } else {
-            console.log(cc[i].toLowerCase());
             paint(cc[i].toLowerCase(), 'green');
         }
     })
@@ -53,9 +52,8 @@ function paintMap(c, ree){
     veta.forEach(function(i){
         if (cc[i] == undefined){
             return 0;
-            //console.log('an error occured');
+            console.log('an error occured');
         } else {
-            console.log(cc[i].toLowerCase());
             paint(cc[i].toLowerCase(), 'beffb3');
         }
     })
@@ -66,7 +64,6 @@ function paintMap(c, ree){
             return 0;
             console.log('an error occured');
         } else {
-            //console.log(cc[i].toLowerCase());
             paint(cc[i].toLowerCase(), '8ed498');    // 8ed498
         }
     })
@@ -76,9 +73,8 @@ function paintMap(c, ree){
     vr.forEach(function(i){
         if (cc[i] == undefined){
             return 0;
-            //console.log('an error occured');
+            console.log('an error occured');
         } else {
-            //console.log(cc[i].toLowerCase());
             paint(cc[i].toLowerCase(), 'c0c0c0');    // 8ed498
         }
     })
