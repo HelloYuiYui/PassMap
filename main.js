@@ -39,7 +39,7 @@ function nameToCode(){
 }
 
 function data(){
-    var data = fs.readFileSync('passport-index-tidy-text.txt', 'utf8').split('/\r?\n/');
+    var data = fs.readFileSync('passport-index-linear.txt', 'utf8').split(';');
     return data;
 }
 
