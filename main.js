@@ -19,7 +19,7 @@ var vals = {
 // Converts country code to country name. i.e. TR = Turkey
 function codeToName(){
     var obj = {};
-    var data = fs.readFileSync('countrycodes.txt', 'utf8').split('\r\n');
+    var data = fs.readFileSync('countrycodes_linear.txt', 'utf8').split(';');
     for (i=0;i<data.length;i++){
         var current = data[i].split(',');
         obj[current[1]] = current[0];
@@ -30,7 +30,7 @@ function codeToName(){
 // Converts country name to country code. i.e. Bulgaria = BG
 function nameToCode(){
     var obj = {};
-    var data = fs.readFileSync('countrycodes.txt', 'utf8').split('\r\n');
+    var data = fs.readFileSync('countrycodes.txt', 'utf8').split('/\r?\n/');
     for (i=0;i<data.length;i++){
         var current = data[i].split(',');
         obj[current[0]] = current[1];
@@ -39,7 +39,7 @@ function nameToCode(){
 }
 
 function data(){
-    var data = fs.readFileSync('passport-index-tidy-text.txt', 'utf8').split('\r\n');
+    var data = fs.readFileSync('passport-index-tidy-text.txt', 'utf8').split('/\r?\n/');
     return data;
 }
 
@@ -54,7 +54,6 @@ function getCountries(){
             var pass = contents[i].split(',')[0],
                 des = contents[i].split(',')[1],
                 val = contents[i].split(',')[2];
-            //console.log(pass);
             countries.push(pass);
         }
     }
@@ -114,7 +113,6 @@ function addLog(c){
             return console.log(err);
         }
     }); 
-        
 }
 
 app.get('/', function(req, res){
