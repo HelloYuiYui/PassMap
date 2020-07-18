@@ -62,6 +62,9 @@ function getCountries(){
 }
 
 function getPass(country){
+    if(country==undefined||country=="Antarctica"||country=="Greenland"){
+        return undefined;
+    }
     var objd = {
         'visarequired':[],
         'visaonarrival':[],
@@ -126,8 +129,15 @@ app.get('/codes', function(req, res){
 app.get('/country/:c', function(req, res){
     var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     var ccodes = codeToName();
-    var pass = ccodes[req.params.c.toUpperCase()];
-    console.log(pass);
+    var pass = ""
+    if(ccodes[req.params.c.toUpperCase()]==undefined){
+        pass = undefined
+    }else{
+        pass = ccodes[req.params.c.toUpperCase()];
+    };
+    if(pass != undefined){
+        console.log(pass);
+    };
     //var d = new Date
     //addLog("[" + d.getDay() + " " + monthNames[d.getMonth()] + " " + d.getFullYear() + ", " + d.getHours() + ":" + d.getMinutes() + ", "+d.getSeconds()+"] "+pass+"\r\n")
     res.send(JSON.stringify(getPass(pass)));
