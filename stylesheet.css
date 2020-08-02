@@ -1,5 +1,5 @@
 body {
-    width: 75%;
+    width: 88%;
     margin: 0 auto 0 auto;
 }
       
@@ -117,14 +117,4 @@ header h1 {
    fill:#ffffff;
    stroke:#000000;
    stroke-width:0.5;
-}
-
-#afscontainer1 {
-    margin: auto;
-    clear: none;
-    height: 80px;
-    width: 600px;
-    overflow-y: scroll;
-    padding: 5px;
-    background-color: black;
 }
