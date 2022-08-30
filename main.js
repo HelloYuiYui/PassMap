@@ -127,7 +127,6 @@ app.get('/codes', function(req, res){
 })
 
 app.get('/country/:c', function(req, res){
-    var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     var ccodes = codeToName();
     var pass = ""
     if(ccodes[req.params.c.toUpperCase()]==undefined){
@@ -150,7 +149,7 @@ app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'))
 })
 
-// Server and port settings.
+//Server and port settings.
 //http.listen(port, '192.168.1.1', function(){
 //    console.log('listening on *: ' + port);
 //});

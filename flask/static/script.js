@@ -1,6 +1,3 @@
-var cc = '';//countryCodes();
-countryCodes();
-
 function paint(c, color){
 	var f = document.getElementsByClassName(c);
 	for (i=0;i<f.length;i++){
@@ -21,66 +18,72 @@ function getB(c){
     x.setRequestHeader('Content-Type', 'application/json');
     x.send();
 }
-    
-function countryCodes(){
-    var ret = '';
-    var x = new XMLHttpRequest();
-    x.onreadystatechange=function(){
-        if (x.readyState==4){ // && x.status==304){
-            cc = JSON.parse(x.responseText);
-        }
-    }
-    x.open('GET', '/codes', true);
-    x.setRequestHeader('Content-Type', 'application/json');
-    x.send();
-}
 
 function paintMap(c, ree){
-    
-    var vf = ree['visafree'];
-    vf.forEach(function(i){
-        if (cc[i] == undefined){
+    ban = ree['no admission'];
+    ban.forEach(function(i){
+        if (i == undefined || i == NaN){
             console.log('an error occured = ' + i);
-            //return 0;
         } else {
-            paint(cc[i].toLowerCase(), 'green');
+            paint(i.toLowerCase(), 'black');
+        }
+    })
+
+    visa = ree['visarequired'];
+    visa.forEach(function(i){
+        if (i == undefined || i == NaN){
+            console.log('an error occured = ' + i);
+        } else {
+            paint(i.toLowerCase(), '#c0c0c0');
         }
     })
     
     veta = ree['visaeta'];
     veta.forEach(function(i){
-        if (cc[i] == undefined){
+        if (i == undefined || i == NaN){
             console.log('an error occured = ' + i);
-            //return 0;
         } else {
-            paint(cc[i].toLowerCase(), '#beffb3');
-        }
-    })
-        
-    von = ree['visaonarrival'];
-    von.forEach(function(i){
-        if (cc[i] == undefined){
-            console.log('an error occured = ' + i);
-            //return 0;
-        } else {
-            paint(cc[i].toLowerCase(), '#8ed498');    // 8ed498
+            paint(i.toLowerCase(), '#beffb3');
         }
     })
     
-    // comment here to get a combined result.
-    vr = ree['visarequired'];
-    vr.forEach(function(i){
-        if (cc[i] == undefined){
+    voa = ree['visaonarrival'];
+    voa.forEach(function(i){
+        if (i == undefined || i == NaN){
             console.log('an error occured = ' + i);
-            //return 0;
         } else {
-            paint(cc[i].toLowerCase(), '#c0c0c0');    // 8ed498
+            paint(i.toLowerCase(), '#8ed498');
+        }
+    })
+
+    vf = ree['visafree'];
+    vf.forEach(function(i){
+        if (i == undefined || i == NaN){
+            console.log('an error occured = ' + i);
+        } else {
+            paint(i.toLowerCase(), 'green');
+        }
+    })
+
+    fom = ree['FoM'];
+    fom.forEach(function(i){
+        if (i == undefined || i == NaN){
+            console.log('an error occured = ' + i);
+        } else {
+            paint(i.toLowerCase(), '#003399');
         }
     })
     
-    if (document.getElementById(c).className['animVal'].indexOf(' eu') > 0){ paint('eu', '#003399'); }
+    self = ree['self'];
+    self.forEach(function(i){
+        if (i == undefined || i == NaN){
+            console.log('an error occured = ' + i);
+        } else {
+            paint(i.toLowerCase(), 'orange');
+        }
+    })
     
-    paint(cc[ree['self']].toLowerCase(), 'orange');
+    paint(ree["self"][0].toLowerCase(), 'orange');
     
     
 }

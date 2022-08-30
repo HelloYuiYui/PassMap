@@ -1,0 +1,120 @@
+body {
+    width: 88%;
+    margin: 0 auto 0 auto;
+}
+      
+header {
+    margin: auto;
+}
+
+header h1 {
+    text-align: center;
+    margin: 2px 0 0 0;
+}
+      
+#legend {
+    text-align: center;
+}
+
+.legend-text {
+    display: inline-block;
+    margin: 0 3px 2px 3px;
+}
+
+.legend-box {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background-color: black;
+}
+
+#FoM {
+    background-color: #003399;
+}
+
+#visafree {
+    background-color: green;
+}
+
+#evisa {
+    background-color: #beffb3;
+}
+
+#visaonarrival {
+    background-color: #8ed498;
+}
+
+#visareq {
+    background-color: #c0c0c0;
+}
+
+#self {
+    background-color: orange;
+}
+
+.circlexx
+{
+   opacity:1;
+   fill:#c0c0c0;
+   stroke:#000000;
+   stroke-width:0.5;
+}
+
+.subxx
+{
+   opacity:0;
+   fill:#c0c0c0;
+   stroke:#000000;
+   stroke-width:0.3;
+}
+
+.landxx
+{
+   fill: #c0c0c0;
+   stroke:#ffffff;
+   stroke-width:0.5;
+   fill-rule:evenodd;
+}
+
+.coastxx
+{
+   stroke-width:0.2;
+}
+
+.antxx
+{
+   opacity:1;
+   fill: #c0c0c0;
+}
+
+.noxx
+{
+   opacity:0;
+   fill:#c0c0c0;
+   stroke:#000000;
+   stroke-width:0.5;
+}
+
+.limitxx
+{
+   opacity:0;
+   fill: #c0c0c0;
+   stroke:#ffffff;
+   stroke-width:0.2;
+   fill-rule:evenodd;
+}
+
+.unxx
+{
+   opacity:1;
+   fill:#c0c0c0;
+   stroke:#000000;
+   stroke-width:0.3;
+}
+.oceanxx
+{
+   opacity: 1;
+   fill:#ffffff;
+   stroke:#000000;
+   stroke-width:0.5;
+}
