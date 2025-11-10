@@ -26,7 +26,7 @@ def index():
 @app.route("/country/<passport>", methods=['GET'])
 def getCountries(passport):
     try:
-        df = pd.read_csv(join(dirname(realpath(__file__)), 'static/passport-index-tidy-cleaned.csv'))
+        df = pd.read_csv(join(dirname(realpath(__file__)), 'static/passport-index-tidy-cleaned.csv'), na_filter=False)
         passp = clean(df[df.Passport_ISO2 == passport.upper()].dropna())
         return passp
     except Exception as e:
